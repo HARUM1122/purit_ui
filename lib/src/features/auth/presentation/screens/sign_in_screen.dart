@@ -6,8 +6,8 @@ import '../components/custom_text_field.dart';
 import '../../../../shared/components/custom_button.dart';
 
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,7 @@ class SignUpScreen extends StatelessWidget {
                 "Forgot Password?",
                 style: TextStyle(
                   fontSize: 14,
-                  color: Color(0xFF8C8C8C)
+                  color: Color(0xFF262626)
                 ),
               ),
             ),
@@ -101,27 +101,26 @@ class SignUpScreen extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             RichText(
-            text: TextSpan(
-              text: "Don't have an account? ",
-              style: const TextStyle(
-                fontSize: 16,
-                color: Color(0xFF000000)
-              ),
-              children: [
-                TextSpan(
-                  text: 'Signup',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    decoration: TextDecoration.underline
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                    }
+              text: TextSpan(
+                text: "Don't have an account? ",
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF000000)
                 ),
-              ],
+                children: [
+                  TextSpan(
+                    text: 'Signup',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      decoration: TextDecoration.underline
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => Navigator.pushReplacementNamed(context, '/sign-up-screen'),
+                  ),
+                ],
+              ),
             ),
-          ),
           ]
         )
       )

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../home/screen/landing/landing_screen.dart';
 
 import '../features/auth/presentation/screens/sign_in_screen.dart';
+import '../features/auth/presentation/screens/sign_up_screen.dart';
 
 Route<dynamic> generateRoutes(RouteSettings settings) {
   switch (settings.name) {
@@ -11,6 +12,10 @@ Route<dynamic> generateRoutes(RouteSettings settings) {
         builder: (context) => const LandingScreen(),
       );
     case '/sign-in-screen':
+      return MaterialPageRoute(
+        builder: (context) => const SignInScreen(),
+      );
+    case '/sign-up-screen':
       return MaterialPageRoute(
         builder: (context) => const SignUpScreen(),
       );

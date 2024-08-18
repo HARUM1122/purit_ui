@@ -5,8 +5,8 @@ import '../components/custom_text_field.dart';
 
 import '../../../../shared/components/custom_button.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +23,15 @@ class SignInScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: size.height * 0.08),
+            SizedBox(height: size.height * 0.06),
             Image.asset(
               'assets/images/purit_logo_2.png'
             ),
-            const SizedBox(height: 60),
+            const SizedBox(height: 30),
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "Login",
+                "Signup",
                 style: TextStyle(
                   fontSize: 34,
                   fontWeight: FontWeight.w600
@@ -42,7 +42,7 @@ class SignInScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "Enter your credentials to log in",
+                "Enter your credentials to signup",
                 style: TextStyle(
                   fontSize: 14,
                   color: Color(0xFF8C8C8C)
@@ -50,32 +50,34 @@ class SignInScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            const CustomTextField(
-              prefixIcon: Icon(
-                Icons.phone,
-                color: Color(0xFF545454),
-              ),
-              hintText: "Enter Phone Number",
-            ),
-            const SizedBox(height: 16),
-            const CustomTextField(
-              prefixIcon: Icon(
-                Icons.lock,
-                color: Color(0xFF545454),
-              ),
-              hintText: "Enter Password"
-            ),
-            const SizedBox(height: 14),
-            const Align(
-              alignment: Alignment.topRight,
-              child: Text(
-                "Forgot Password?",
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Color(0xFF8C8C8C)
-                ),
-              ),
-            ),
+            ...() {
+              List<Widget> textFields = [];
+              const List<(String, IconData)> textFieldConfigurations = [
+                ("Enter name", Icons.person),
+                ("Enter Email", Icons.mail),
+                ("Enter Phone Number", Icons.phone),
+                ("Enter Password", Icons.lock),
+                ("Confirm Password", Icons.lock)
+              ];
+              for (int i = 0; i < textFieldConfigurations.length; i++) {
+                final config = textFieldConfigurations[i];
+                textFields.add(
+                  CustomTextField(
+                    hintText: config.$1,
+                    prefixIcon: Icon(
+                      config.$2,
+                      color: const Color(0xFF545454),
+                    ),
+                  )
+                );
+                if (i < textFieldConfigurations.length - 1) {
+                  textFields.add(
+                   const  SizedBox(height: 16)
+                  );
+                }
+              }
+              return textFields;
+            }(),
             const SizedBox(height: 20),
             CustomButton(
               width: double.infinity,
@@ -88,7 +90,7 @@ class SignInScreen extends StatelessWidget {
               child: const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text(
-                  "Login",
+                  "Signup",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
@@ -100,29 +102,26 @@ class SignInScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             RichText(
-            text: TextSpan(
-              text: "Don't have an account? ",
-              style: TextStyle(
-                fontSize: 12,
-                color: Color(0xFF000000)
-              ),
-              children: [
-                TextSpan(
-                  text: 'Signup',
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    decoration: TextDecoration.underline
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      print('Clickable text tapped');
-                      // Add your click handling logic here
-                    },
+              text: TextSpan(
+                text: "Already have an account? ",
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Color(0xFF000000)
                 ),
-              ],
+                children: [
+                  TextSpan(
+                    text: 'Signin',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      decoration: TextDecoration.underline
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => Navigator.pushReplacementNamed(context, '/sign-in-screen'),
+                  ),
+                ],
+              ),
             ),
-          ),
           ]
         )
       )
