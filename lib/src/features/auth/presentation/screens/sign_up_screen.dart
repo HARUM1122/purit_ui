@@ -5,9 +5,8 @@ import '../components/custom_text_field.dart';
 
 import '../../../../shared/components/custom_button.dart';
 
-
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -99,25 +98,27 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             RichText(
             text: TextSpan(
               text: "Don't have an account? ",
-              style: const TextStyle(
-                fontSize: 16,
+              style: TextStyle(
+                fontSize: 12,
                 color: Color(0xFF000000)
               ),
               children: [
                 TextSpan(
                   text: 'Signup',
                   style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
                     decoration: TextDecoration.underline
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                    }
+                      print('Clickable text tapped');
+                      // Add your click handling logic here
+                    },
                 ),
               ],
             ),

@@ -12,7 +12,7 @@ Route<dynamic> generateRoutes(RouteSettings settings) {
       );
     case '/sign-in-screen':
       return MaterialPageRoute(
-        builder: (context) => const SignInScreen(),
+        builder: (context) => const SignUpScreen(),
       );
     default:
       return MaterialPageRoute(
