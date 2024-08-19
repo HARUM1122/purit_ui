@@ -55,7 +55,6 @@ class BottomNavigator extends ConsumerWidget {
           )
         ],
       ),
-      
     );
   }
 }
