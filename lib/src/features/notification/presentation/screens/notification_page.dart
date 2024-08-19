@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:purit_ui/src/features/notification/presentation/components/notification_list.dart';
+
 import '../components/notification_list.dart';
 import '../components/notification_tile.dart';
 
@@ -46,7 +46,7 @@ class NotificationPage extends StatelessWidget {
                 style: TextStyle(
                   color: Color(0xFF1E1E1E),
                   fontSize: 20,
-                  fontWeight: FontWeight.w700
+                  fontWeight: FontWeight.w600
                 ),
               )
             ],
@@ -99,47 +99,5 @@ class NotificationPage extends StatelessWidget {
         ],
       )
     );
-    // return const NotificationList(
-    //   readNotifications: [
-    //     NotificationTile(
-    //       heading: "Notification Heading",
-    //       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    //       since: "2 Hours ago", 
-    //       unRead: true
-    //     ),
-    //     NotificationTile(
-    //       heading: "Notification Heading",
-    //       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    //       since: "2 Hours ago", 
-    //       unRead: true
-    //     ),
-    //     NotificationTile(
-    //       heading: "Notification Heading",
-    //       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    //       since: "2 Hours ago", 
-    //       unRead: true
-    //     )
-    //   ],
-    //   unReadNotifications: [
-    //     NotificationTile(
-    //       heading: "Notification Heading",
-    //       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    //       since: "2 Hours ago", 
-    //       unRead: false
-    //     ),
-    //     NotificationTile(
-    //       heading: "Notification Heading",
-    //       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    //       since: "2 Hours ago", 
-    //       unRead: false
-    //     ),
-    //     NotificationTile(
-    //       heading: "Notification Heading",
-    //       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    //       since: "2 Hours ago", 
-    //       unRead: false
-    //     )
-    //   ],
-    // );
   }
 }

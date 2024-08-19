@@ -15,7 +15,7 @@ class BottomNavigator extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       width: double.infinity,
-      height: 70,
+      height: 80 + MediaQuery.paddingOf(context).bottom,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: const BoxDecoration(
         color:Color(0xFF8FC123),
