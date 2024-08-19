@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/components/custom_button.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -32,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                       "Hello, Harum!",
                       style: TextStyle(
                         fontSize: 12,
-                        color: Color(0xFF000000),
+                        color: Color(0xFF1E1E1E),
                         fontWeight: FontWeight.w600
                       ),
                     ),
@@ -62,7 +64,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: 500,
+                      height: 540,
                       decoration: BoxDecoration(
                         color: const Color(0xFF044A73),
                         borderRadius: BorderRadius.circular(25)
@@ -99,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                             "21 more days left!",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 14,
                               fontWeight: FontWeight.w500
                             ),
                           ),
@@ -107,12 +109,253 @@ class HomeScreen extends StatelessWidget {
                             "(233 litres)",
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 12,
                             ),
                           ),
+                          const SizedBox(height: 20),
+                          CustomButton(
+                            backgroundColor: const Color(0xFF8FC123),
+                            applyClickAnimation: true, 
+                            onPressed: () {},
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50)
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                              child: Text(
+                                "I changes the Filter",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500
+                                ),
+                              ),
+                            )
+                          ),
+                          const SizedBox(height: 20),
+                          CustomButton(
+                            backgroundColor: Colors.transparent,
+                            applyClickAnimation: false,
+                            onPressed: () {},
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                              side: const BorderSide(
+                                color: Colors.white,
+                                width: 0.4
+                              )
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                              child: Text(
+                                "Buy Spare Parts",
+                                style: TextStyle(
+                                  color: Colors.white
+                                ),
+                              ),
+                            )
+                          )
                         ],
                       )
-                    )
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      width: double.infinity,
+                      height: 280,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(
+                          color: const Color(0xFFC8C8C8),
+                          width: 0.6
+                        )
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(height: 30),
+                          const Text(
+                            "Your Information",
+                            style: TextStyle(
+                              color: Color(0xFF1E1E1E),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                            ),
+                          ),
+                          const Spacer(),
+                          Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.all(12),
+                                width: 160,
+                                height: 160,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    width: 2,
+                                    color: const Color(0xFF8FC123),
+                                  ),
+                                  borderRadius: BorderRadius.circular(24)
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const SizedBox(height: 28),
+                                    Image.asset(
+                                      'assets/images/water_drop_vector.png'
+                                    ),
+                                    const Spacer(),
+                                    const Text(
+                                      "Edit or view your water info",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Color(0xFF1E1E1E),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500
+                                      ),
+                                    ),
+                                    const SizedBox(height: 18),
+                                  ],
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                margin: const EdgeInsets.all(12),
+                                width: 160,
+                                height: 160,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFF6F6F6),
+                                  borderRadius: BorderRadius.circular(24)
+                                ),
+                                child: const Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    SizedBox(height: 28),
+                                    Text(
+                                      "12",
+                                      style: TextStyle(
+                                        color: Color(0xFF1E1E1E),
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.w600
+                                      ),
+                                    ),
+                                    Spacer(),
+                                    Text(
+                                      "Filters Changed",
+                                      style: TextStyle(
+                                        color: Color(0xFF1E1E1E),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500
+                                      ),
+                                    ),
+                                    SizedBox(height: 30)
+                                  ],
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      width: double.infinity,
+                      height: 260,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF6F6F6),
+                        borderRadius: BorderRadius.circular(25)
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(height: 40),
+                          Image.asset(
+                            'assets/images/whatsapp_logo.png'
+                          ),
+                          const SizedBox(height: 20),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 40),
+                            child: Text(
+                              "Whatsapp support available Monday to Friday via messaging",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color(0xFF1E1E1E),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          CustomButton(
+                            width: 220,
+                            height: 50,
+                            backgroundColor: Colors.transparent,
+                            applyClickAnimation: false,
+                            onPressed: () {},
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                              side: const BorderSide(
+                                color: Color(0xFF8FC123),
+                                width: 1
+                              )
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "Contact",
+                                style: TextStyle(
+                                  color: Color(0xFF8FC123),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
+                                ),
+                              ),
+                            )
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Container(
+                      width: double.infinity,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        border: Border.all(
+                          color: const Color(0xFFC8C8C8),
+                          width: 0.6
+                        )
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(width: 30),
+                          Image.asset(
+                            'assets/images/shower_filter.png'
+                          ),
+                          const Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 40),
+                                Text(
+                                  "Try the new shower filter!",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color(0xFF1E1E1E),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600
+                                  ),
+                                ),
+                                Text(
+                                  "Enjoy all the benefits of pure water even in the shower, for the well-being of your skin and hair",
+                                  style: TextStyle(
+                                    color: Color(0xFF1E1E1E),
+                                    fontSize: 12,
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      )
+                    ),
+                    const SizedBox(height: 120),
                   ],
                 ),
               ),
@@ -123,68 +366,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-// // AI - GENERATED CODE
-// class ContainerWithHole extends StatelessWidget {
-//   final double diameter;
-//   final double holeRadius;
-//   final int percent;
-
-//   const ContainerWithHole({ 
-//     required this.diameter,
-//     required this.holeRadius,
-//     required this.percent,
-//     super.key
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ClipPath(
-//       clipper: HoleClipper(diameter: diameter, holeRadius: holeRadius),
-//       child: Container(
-//         // color: Colors.red,
-//         decoration: BoxDecoration(
-//           gradient: LinearGradient(
-//             begin: Alignment.bottomCenter,
-//             end: Alignment.topCenter,
-//             colors: [
-//               Colors.red, // Start color (fills from bottom)
-//               Colors.red.withOpacity(0.0), // Transparent color (fills the rest)
-//             ],
-//             stops: [
-//               percent / 100, // Controls how much of the container is filled
-//               percent / 100, // This ensures the rest is transparent
-//             ],
-//           ),
-//         ),
-//       )
-//     );
-//   }
-// }
-
-// class HoleClipper extends CustomClipper<Path> {
-//   final double diameter;
-//   final double holeRadius;
-
-//   HoleClipper({required this.diameter, required this.holeRadius});
-
-//   @override
-//   Path getClip(Size size) {
-//     Path path = Path()
-//       ..addOval(Rect.fromCircle(center: Offset(size.width / 2, size.height / 2), radius: diameter / 2));
-
-//     // Create a hole in the middle
-//     path.addOval(Rect.fromCircle(
-//       center: Offset(size.width / 2, size.height / 2),
-//       radius: holeRadius,
-//     ));
-
-//     // Fill the hole
-//     path.fillType = PathFillType.evenOdd;
-
-//     return path;
-//   }
-
-//   @override
-//   bool shouldReclip(HoleClipper oldClipper) => true;
-// }
