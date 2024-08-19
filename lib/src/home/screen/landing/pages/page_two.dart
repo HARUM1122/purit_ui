@@ -7,6 +7,7 @@ class PageTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
+    final EdgeInsets edgeInsets = MediaQuery.paddingOf(context);
     return Stack(
       children: [
         Container(
@@ -122,7 +123,7 @@ class PageTwo extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(height: 40)
+                SizedBox(height: edgeInsets.bottom + 16)
               ],
             ),
           ),

@@ -18,24 +18,17 @@ class _LandingScreenState extends State<LandingScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    final EdgeInsets edgeInsets = MediaQuery.paddingOf(context);
     return Material(
-      child: Padding(
-        padding: EdgeInsets.only(
-          top: edgeInsets.top,
-          bottom: edgeInsets.bottom
-        ),
-        child: PageView(
-          controller: _pageController,
-          children: [
-            PageOne(
-              pageController: _pageController,
-            ),
-            PageTwo(
-              pageController: _pageController,
-            )
-          ],
-        ),
+      child: PageView(
+        controller: _pageController,
+        children: [
+          PageOne(
+            pageController: _pageController,
+          ),
+          PageTwo(
+            pageController: _pageController,
+          )
+        ],
       ),
     );
   }

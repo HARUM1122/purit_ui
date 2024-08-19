@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
-
-import '../components/custom_text_field.dart';
 
 import '../../../../shared/components/custom_button.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class UserInfoScreen extends StatelessWidget {
+  const UserInfoScreen({super.key});
+
+  void pickImage() {
+    // TODO: Add image picking logic
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class SignInScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "Login",
+                "Upload Picture",
                 style: TextStyle(
                   fontSize: 34,
                   fontWeight: FontWeight.w600
@@ -42,7 +43,7 @@ class SignInScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "Enter your credentials to log in",
+                "Select a picture for your profile",
                 style: TextStyle(
                   fontSize: 14,
                   color: Color(0xFF8C8C8C)
@@ -50,36 +51,37 @@ class SignInScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            const CustomTextField(
-              prefixIcon: Icon(
-                Icons.phone,
-                color: Color(0xFF545454),
-              ),
-              hintText: "Enter Phone Number",
-            ),
-            const SizedBox(height: 16),
-            const CustomTextField(
-              prefixIcon: Icon(
-                Icons.lock,
-                color: Color(0xFF545454),
-              ),
-              hintText: "Enter Password"
-            ),
-            const SizedBox(height: 14),
-            Align(
-              alignment: Alignment.topRight,
-              child: GestureDetector(
-                onTap: () => Navigator.pushNamed(context, '/forgot-password-screen'),
-                child: const Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color(0xFF262626)
+            GestureDetector(
+              onTap: pickImage,
+              child: Container(
+                width: 160,
+                height: 160,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFF6F6F6)
+                ),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 10, bottom: 10),
+                    width: 50,
+                    height: 50,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xFF044A73)
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        Icons.camera_alt_outlined,
+                        size: 26,
+                        color: Color(0xFFFFFFFF)
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 40),
             CustomButton(
               width: double.infinity,
               backgroundColor: const Color.fromRGBO(143, 193, 35, 1),
@@ -88,12 +90,12 @@ class SignInScreen extends StatelessWidget {
               ),
               applyClickAnimation: true,
               onPressed: () {
-                Navigator.pushReplacementNamed(context, '/user-info-screen');
+                Navigator.pushNamed(context, '/home-screen');
               },
               child: const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text(
-                  "Login",
+                  "Next",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
@@ -103,28 +105,15 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
-            RichText(
-              text: TextSpan(
-                text: "Don't have an account? ",
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFF000000)
-                ),
-                children: [
-                  TextSpan(
-                    text: 'Signup',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      decoration: TextDecoration.underline
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => Navigator.pushReplacementNamed(context, '/sign-up-screen'),
-                  ),
-                ],
+            const SizedBox(height: 20),
+            const Text(
+              "Skip",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                decoration: TextDecoration.underline
               ),
-            ),
+            )
           ]
         )
       )

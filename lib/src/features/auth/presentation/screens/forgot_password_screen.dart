@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/gestures.dart';
 
 import '../components/custom_text_field.dart';
 
 import '../../../../shared/components/custom_button.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class ForgotPasswordScreen extends StatelessWidget {
+  const ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class SignInScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "Login",
+                "Forgot Password",
                 style: TextStyle(
                   fontSize: 34,
                   fontWeight: FontWeight.w600
@@ -42,7 +41,7 @@ class SignInScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "Enter your credentials to log in",
+                "Enter your email to reset the password",
                 style: TextStyle(
                   fontSize: 14,
                   color: Color(0xFF8C8C8C)
@@ -52,32 +51,10 @@ class SignInScreen extends StatelessWidget {
             const SizedBox(height: 30),
             const CustomTextField(
               prefixIcon: Icon(
-                Icons.phone,
+                Icons.mail,
                 color: Color(0xFF545454),
               ),
-              hintText: "Enter Phone Number",
-            ),
-            const SizedBox(height: 16),
-            const CustomTextField(
-              prefixIcon: Icon(
-                Icons.lock,
-                color: Color(0xFF545454),
-              ),
-              hintText: "Enter Password"
-            ),
-            const SizedBox(height: 14),
-            Align(
-              alignment: Alignment.topRight,
-              child: GestureDetector(
-                onTap: () => Navigator.pushNamed(context, '/forgot-password-screen'),
-                child: const Text(
-                  "Forgot Password?",
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Color(0xFF262626)
-                  ),
-                ),
-              ),
+              hintText: "Email",
             ),
             const SizedBox(height: 20),
             CustomButton(
@@ -87,13 +64,11 @@ class SignInScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(40)
               ),
               applyClickAnimation: true,
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/user-info-screen');
-              },
+              onPressed: () {},
               child: const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text(
-                  "Login",
+                  "Send",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
@@ -102,29 +77,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 30),
-            RichText(
-              text: TextSpan(
-                text: "Don't have an account? ",
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Color(0xFF000000)
-                ),
-                children: [
-                  TextSpan(
-                    text: 'Signup',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      decoration: TextDecoration.underline
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () => Navigator.pushReplacementNamed(context, '/sign-up-screen'),
-                  ),
-                ],
-              ),
-            ),
+            )
           ]
         )
       )

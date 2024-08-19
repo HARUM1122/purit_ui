@@ -7,6 +7,7 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
+    final EdgeInsets edgeInsets = MediaQuery.paddingOf(context);
     return Stack(
       children: [
         Container(
@@ -122,7 +123,7 @@ class PageOne extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(height: 40)
+                SizedBox(height: edgeInsets.bottom + 16)
               ],
             ),
           ),
@@ -131,5 +132,3 @@ class PageOne extends StatelessWidget {
     );
   }
 }
-
-// background: linear-gradient(180deg, rgba(143, 193, 35, 0) 0%, #8FC123 100%);

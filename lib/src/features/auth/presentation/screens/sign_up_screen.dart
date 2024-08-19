@@ -86,7 +86,9 @@ class SignUpScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(40)
               ),
               applyClickAnimation: true,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, '/user-info-screen');
+              },
               child: const Padding(
                 padding: EdgeInsets.all(16),
                 child: Text(
